@@ -1,0 +1,66 @@
+﻿@model CasoEstudio_CarlosRamirezReyes.Models.Post
+
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+        <title>Crear Publicación</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-image: url('/images/bg-home.png');
+                background-size: cover;
+                background-position: center center;
+                margin: 0;
+                padding: 0x;
+                min-height: 100vh;
+            }
+
+            .publi-container {
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 8px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                padding: 45px;
+                width: auto;
+                text-align: left;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="publi-container">
+            <form asp-action="Crear" method="post">
+                <div class="form-group">
+                    <label asp-for="Titulo"></label>
+                    <input asp-for="Titulo" class="form-control" />
+                    <span asp-validation-for="Titulo"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contenido"></label>
+                    <textarea asp-for="Contenido" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Contenido"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UsuarioID"></label>
+                    <input asp-for="UsuarioID" class="form-control" readonly />
+                    <span asp-validation-for="UsuarioID"></span>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Crear Publicación</button>
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>

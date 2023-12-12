@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Admin Page";
+}
+
+
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <title>Red Social</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/images/bg-home.png');
+            background-size: cover;
+            background-position: center center;
+            margin: 0;
+            padding: 0x;
+            min-height: 100vh;
+        }
+
+        .admin-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 45px;
+            width: 300px;
+            text-align: left;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="admin-container">
+        <div class="text-center">
+            <h1 class="display-4">Bienvenidos a Nuestro Centro de Administración</h1>
+
+
+            <div class="row card-1">
+                <a asp-controller="Usuario" asp-action="Index" class="btn btn-primary">Ir a Centro Usuarios</a>
+            </div>
+            <br />
+            <div class="row card-1">
+                <a asp-controller="Post" asp-action="Index" class="btn btn-primary">Ir a Centro de Post</a>
+            </div>
+
+
+        </div>
+    </div>
+    
+
+</body>
+
+</html>

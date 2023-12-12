@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Proyecto Final</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        /* Establecer color blanco para los enlaces del navbar */
+        .navbar-nav li a {
+            color: white;
+        }
+
+        /* Alinear la caja de búsqueda a la derecha */
+        .navbar-form {
+            flex: 1; /* Ocupar espacio restante */
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Establecer color blanco para la marca del navbar */
+        .navbar-brand {
+            color: white;
+            margin-right: 20px; /* Añade un margen a la derecha de la marca */
+        }
+
+        .btn {
+            color: gray;
+            margin-right: 20px; /* Añade un margen a la derecha de la marca */
+        }
+
+        /* Quitar el margin-bottom del navbar */
+        .navbar.bg-primary {
+            margin-bottom: 0;
+        }
+
+        /* Estilo para el elemento de login al lado derecho */
+        .navbar-right {
+            padding-right: 20px; /* Agregar padding al lado derecho */
+        }
+
+    </style>
+</head>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/656531b31db16644c555317c/1hg9kka4i';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Red Social</a>
+        </div>
+    </div>
+</nav>
+
+<div class="navbar navbar-default">
+    <div class="container">
+        <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+              @if(ViewBag.TipoUsuario != null && ViewBag.TipoUsuario == "A")
+            {
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Admin">Admin</a>
+                </li>
+            }
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<body>
+    <header>
+        
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Proyecto Final - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+       <!-- Resto de tu código -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
